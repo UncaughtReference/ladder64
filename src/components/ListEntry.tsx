@@ -8,8 +8,8 @@ import { getTierBadgeColor } from "@/lib/getTierBadgeColor"
 
 export default function ListEntry({ achievement, index }: { achievement: Achievement; index: number }) {
     return (
-        <Card>
-            <CardContent>
+        <Card className="h-60 md:h-30 shrink-0 flex flex-row items-center">
+            <CardContent className="w-full">
                 <div className="flex items-center justify-between gap-4 flex-col md:flex-row">
                     <div className="flex min-w-0 flex-1 gap-2 items-center flex-col text-center md:flex-row md:text-left">
                         <p className="text-5xl w-16 shrink-0">#{index + 1}</p>

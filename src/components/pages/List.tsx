@@ -1,4 +1,4 @@
-import { Card, CardHeader, CardContent } from "@/components/ui/card"
+import { Card, CardContent } from "@/components/ui/card"
 
 import { type Achievement } from "@/types/Achievement"
 
@@ -9,7 +9,7 @@ const listData: Achievement[] = [
         hackName: "Treasure World: Dream Edition",
         courseName: "Final Tragedy",
         achievementName: "Climax of a Crappy Dream",
-        tierAverage: 12.00,
+        tierAverage: 11.50,
         tierPlus: 0.00,
         tierMinus: 0.00,
         achievementType: "star",
@@ -65,13 +65,12 @@ export default function List() {
         <div className="rounded-xl bg-gradient-to-r from-violet-500 via-pink-500 to-blue-400 p-1">
             <div className="rounded-xl bg-background">
                 <Card>
-                    <CardHeader>
-                        <p className="text-xl">List</p>
-                    </CardHeader>
                     <CardContent>
-                        {listData.sort((a, b) => b.tierAverage - a.tierAverage).map((achievement, index) => (
-                            <ListEntry key={index} achievement={achievement} index={index} />
-                        ))}
+                        <div className="flex flex-col gap-2">
+                            {listData.sort((a, b) => b.tierAverage - a.tierAverage).map((achievement, index) => (
+                                <ListEntry key={index} achievement={achievement} index={index} />
+                            ))}
+                        </div>
                     </CardContent>
                 </Card>
             </div>

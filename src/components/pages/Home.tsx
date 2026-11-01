@@ -13,7 +13,7 @@ const fakeSubmissionData: Submission[] = [
         hackName: "Treasure World: Dream Edition",
         courseName: "Final Tragedy",
         achievementName: "Climax of a Crappy Dream",
-        opinion: 12.5,
+        opinion: 12.00,
     },
     {
         id: 2,
@@ -32,7 +32,16 @@ const fakeSubmissionData: Submission[] = [
         courseName: "My",
         achievementName: "Dingaling",
         opinion: 26.0,
-    }
+    },
+    {
+        id: 4,
+        username: "diddy larp",
+        avatarUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLHnueHDX-RFrFl3ZPGcVRkLbQD3T8wKK6nB63cSPKkQ&s=10",
+        hackName: "Treasure World: Dream Edition",
+        courseName: "Final Tragedy",
+        achievementName: "Climax of a Crappy Dream",
+        opinion: 11.00,
+    },
 ];
 
 const moderatorData: Moderator[] = [
