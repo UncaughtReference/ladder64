@@ -4,6 +4,10 @@
 @import "@fontsource-variable/geist";
 @import "@fontsource-variable/inter";
 
+html {
+    scroll-behavior: smooth;
+}
+
 @keyframes gradient-shift {
     0% {
         background-position: 0% 50%;
@@ -26,6 +30,19 @@
     );
     background-size: 300% 300%;
     animation: gradient-shift 12s ease infinite;
+}
+
+@keyframes scale-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.01);
+  }
+}
+
+.scale-pulse {
+  animation: scale-pulse 300ms ease-in-out 1;
 }
 
 @custom-variant dark (&:is(.dark *));
