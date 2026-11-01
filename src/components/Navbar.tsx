@@ -12,9 +12,15 @@ import {
     useSidebar,
 } from "@/components/ui/sidebar"
 
-import { House } from "lucide-react"
+import { House, ScrollText } from "lucide-react"
 
-export default function Navbar({ onNavigate }: { onNavigate: (id: string) => void }) {
+export default function Navbar({
+    onNavigate,
+    onRouteChange,
+}: {
+    onNavigate: (id: string) => void
+    onRouteChange: (page: "home" | "list") => void
+}) {
     const { setOpenMobile } = useSidebar()
 
     return (
@@ -22,13 +28,18 @@ export default function Navbar({ onNavigate }: { onNavigate: (id: string) => voi
             <div className="bg-background">
                 <Sidebar>
                     <SidebarHeader>
-                        ladder64
+                        <div className="flex gap-2 items-center">
+                            <img src={`${import.meta.env.BASE_URL}logo.png`} className="w-[40px]" />ladder64
+                        </div>
                     </SidebarHeader>
                     <SidebarContent>
                         <SidebarGroup>
                             <SidebarMenu>
                                 <SidebarMenuItem>
-                                    <SidebarMenuButton onClick={() => setOpenMobile(false)}>
+                                    <SidebarMenuButton onClick={() => {
+                                        onRouteChange("home")
+                                        setOpenMobile(false)
+                                    }}>
                                         <House />Home
                                     </SidebarMenuButton>
                                     <SidebarMenuSub>
@@ -47,6 +58,14 @@ export default function Navbar({ onNavigate }: { onNavigate: (id: string) => voi
                                             Moderators
                                         </SidebarMenuSubButton>
                                     </SidebarMenuSub>
+                                </SidebarMenuItem>
+                                <SidebarMenuItem>
+                                    <SidebarMenuButton onClick={() => {
+                                        onRouteChange("list")
+                                        setOpenMobile(false)
+                                    }}>
+                                        <ScrollText />List
+                                    </SidebarMenuButton>
                                 </SidebarMenuItem>
                             </SidebarMenu>
                         </SidebarGroup>

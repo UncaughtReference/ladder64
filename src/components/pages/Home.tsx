@@ -5,7 +5,6 @@ import ModeratorCard from "@/components/ModeratorCard"
 
 import { type Submission } from "@/types/Submission"
 import { type Moderator } from "@/types/Moderator"
-
 const fakeSubmissionData: Submission[] = [
     {
         id: 1,
